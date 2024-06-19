@@ -246,8 +246,37 @@ body.body-active{
 
 .slider-center-lower{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    flex-direction: column;
+}
+
+.slider-lower-box{
+    width: 100%;
+    flex: 0.3;
+    background-color: rgb(130, 130, 165);
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: sans-serif;
+    padding: 0px 50px;
+    transition: 1s;
+    opacity: 1;
+}
+
+.slider-lower-box i{
+    font-size: 3rem;
+}
+
+.slider-lower-box:hover{
+    background-color: rgb(151, 151, 160);
+}
+
+.slider-lower-box.side-transform{
+    transform: translate(270px,170px);
+    opacity: 0;
+    transition: 1s;
 }
 
 .hidden-button{

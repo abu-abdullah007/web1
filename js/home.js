@@ -9,7 +9,10 @@ const mainSlider = document.querySelector('.slider-box')
 const hideAddButton = document.querySelectorAll('.card-box h1')
 const cardBoxes = document.querySelectorAll('.card-box')
 const mainSliderDisplay = document.querySelector('.slider-center-lower')
+const hiddenButton = document.querySelector('.hidden-button')
 const body = document.body
+
+const sliderLowerBoxes = document.querySelectorAll('.slider-lower-box')
 
 navButton.addEventListener("click",()=>{
     hiddenNavBar.classList.add('show-hidden')
@@ -28,6 +31,12 @@ hideAddButton.forEach((hideAbb,index)=>{
             mainSlider.classList.add('slider-active')
             body.classList.add('body-active')
         },10)
+
+        sliderLowerBoxes.forEach((sliderLower,index)=>{
+            setTimeout(()=>{
+                sliderLower.classList.remove('side-transform')
+            },index * 600)
+        })
     })
 })
 
@@ -39,4 +48,10 @@ hideRemoveButton.addEventListener("click",()=>{
         parentSideBar.classList.remove('side-active')
         body.classList.remove('body-active')
     },300)
+
+    sliderLowerBoxes.forEach((sliderLower,index)=>{
+        setTimeout(()=>{
+            sliderLower.classList.add('side-transform')
+        },index * 200)
+    })
 })
